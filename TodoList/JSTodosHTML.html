@@ -1,0 +1,25 @@
+<header>
+</header>
+
+<body>
+    <div id="input">
+    <form>
+        New TODO: <input id="newTodoText" type="text"><br>
+        Priority: <input id="newTodoPriorityRange" 
+                    type="range" name="vol" min="1" max="10" 
+                    oninput="updatePriorityValue()"  
+                    onchange="updatePriorityValue()">
+                    <label id="newTodoPriorityLabel">#</label>
+    
+                    <br>
+                    <br>
+        
+        <button id="newTODOAcceptButton">Add New TODO</button>
+    </form>
+    </div>
+    <h1>Todos (): </h1>
+    <ul id="ulOfTODOs" style="list-style-type:none;"> <!-- list-style-type:none removes the bullet points -->
+    </ul>
+
+    <script src="JSTodos.js"></script>
+</body>
