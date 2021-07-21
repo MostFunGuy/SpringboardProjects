@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Memory Game!</title>
+    <link rel="stylesheet" href="memorygame.css" />
+  </head>
+  <body>
+    <h1>Memory Game!</h1>
+    Debug mode: <input type="checkbox" id="debugcheckbox" onclick="debugmodechange();"><br>
+    <button id="easybutton" onclick="difficultySelector('easy');"><b>EASY</b></button>
+    <button id="mediumbutton" onclick="difficultySelector('medium');"><b>MEDIUM</b></button>
+    <button id="hardbutton" onclick="difficultySelector('hard');"><b>HARD</b></button><br>
+    How many sets: <input id="howmanysetsrange" 
+    type="range" name="vol" min="3" max="13" 
+    oninput="updateHowManySets()" 
+    onchange="updateHowManySets()">
+    <label id="howmanysetslabel">#</label><br>
+    How many in each set: <input id="howmanyineachsetrange" 
+    type="range" name="vol" min="2" max="10" 
+    oninput="updateHowManyInEachSet()" 
+    onchange="updateHowManyInEachSet()">
+    <label id="howmanyineachsetlabel">#</label><br>
+    <div id="guesscounterdiv">Guesses: 0</div>
+    <div id="bestscorediv">Best score: None yet!</div>
+    <button id="startgamebutton" style="width:270px;height:60px;font-size:30px;" onclick="startGame();"><b>START GAME</b></button>
+    <form>
+    <button id="restartgamebutton" style="width:270px;height:60px;font-size:30px;display:none"><b>RESTART GAME</b></button>
+    </form>
+    <div id="game">
+    </div>
+    <script src="memorygame.js"></script>
+  </body>
+</html>
