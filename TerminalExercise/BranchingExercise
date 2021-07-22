@@ -1,0 +1,17 @@
+Branching Exercise
+
+What git command creates a branch?
+git checkout -b <branchname>
+
+What is the difference between a fast-forward and recursive merge?
+Different algorithm that git chooses for us
+
+What git command changes to another branch?
+git checkout <branchname>
+
+What git command deletes a branch?
+git branch -D <branchname>
+
+How do merge conflicts happen?
+When two developers are working on the same file, and one tries pushing the same file already pushed by another developer
+You have to then determine which file (or lines) are the more relevant ones.
