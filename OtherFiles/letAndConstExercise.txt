@@ -1,0 +1,28 @@
+What is the difference between var and let?
+	Both var and let CAN be reassigned
+	var CAN be redeclared, while let canNOT
+	var has function scope, while let has block scope
+	var variables can be hoisted (Can be accessed with hoist? Unsure how to phrase that), while let variables cannot. 
+
+
+What is the difference between var and const?
+	var CAN be reassigned, while const canNOT be reassigned
+	var CAN be redeclared, while const canNOT be reassigned
+	var has function scope, while const has block scope
+	var variables can be hoisted, while const variables cannot. 
+
+What is the difference between let and const?
+	let CAN be reassigned, while const canNOT be reassigned
+	Both let AND const canNOT be reassigned
+	Both let AND const have block scope
+	Both let AND const canNOT be hoisted 
+
+What is hoisting?
+	Hoisting is an automatic process in which the compiler reads the declarations in the context in which they're declared, before code is ran. This allows for developers to access/read that the variable exists, lines above it actually being declared
+
+	
+
+My Table: 
+	var  : CAN reassign    : CAN redeclare    : Scope is function
+	let  : CAN reassign    : canNOT redeclare : Scope is block
+	const: canNOT reassign : canNOT redeclare : Scope is block
