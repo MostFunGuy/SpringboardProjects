@@ -1,0 +1,39 @@
+<!doctype html>
+<head>
+  <title>Connect 4</title>
+  <link href="connect4.css" rel="stylesheet">
+
+  <!-- Reused code from the memory game -->
+  <button id="defaultsizebutton" onclick="defaultSettingsButton();"><b>Default Settings</b></button><br>
+  
+  Rows: <input id="howmanyrowsrange" 
+    type="range" name="vol" min="4" max="20" 
+    oninput="updateLabelsOnScreen(true)" 
+    onchange="updateLabelsOnScreen(true)">
+    <label id="howmanyrowslabel">#</label><br>
+  Columns: <input id="howmanycolumnsrange" 
+    type="range" name="vol" min="4" max="20" 
+    oninput="updateLabelsOnScreen(true)" 
+    onchange="updateLabelsOnScreen(true)">
+    <label id="howmanycolumnslabel">#</label><br>
+  Players: <input id="howmanyplayersrange" 
+    type="range" name="vol" min="2" max="6" 
+    oninput="updateLabelsOnScreen(true)" 
+    onchange="updateLabelsOnScreen(true)">
+    <label id="howmanyplayerslabel">#</label><br>
+  Win condition: <input id="howmanyinarowrange" 
+    type="range" name="vol" min="3" max="7" 
+    oninput="updateLabelsOnScreen(true)" 
+    onchange="updateLabelsOnScreen(true)">
+    <label id="howmanyinarowlabel">#</label><br>
+</head>
+<body>
+
+<div id="game">
+  <table id="board"></table>
+</div>
+
+<script src="connect4.js"></script>
+
+</body>
+</html>
