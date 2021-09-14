@@ -1,0 +1,47 @@
+How Web Works Exercise
+
+
+Part One: Solidify Terminology
+In your own terms, define the following terms:
+
+1: What is HTTP? Hyper Text Transfer Protocol: 
+	The rules for how you get data to and from a server
+2: What is a URL? Uniform Resource locator: 
+	A web address referencing a web resource 
+3: What is DNS? Domain Name System: 
+	decentralized naming system for computers connected to a network
+4: What is a query string? 
+	A set of key value pairs that's appended to the end of a URL to pass information to the target server
+5: What are two HTTP verbs and how are they different? 
+	GET/POST. GET gets data from a server without manipulating the server in any way, and POST both gets data from the server and can end up modifying data on the server 
+6: What is an HTTP request? 
+	Request to a server that follows HTTP protocol
+7: What is an HTTP response? 
+	Response from an HTTP request, HTML/JS/CSS/ETC
+8: What is an HTTP header? Give a couple examples of request and response headers you have seen.
+	HTTP headers give additional information about a request or response. 
+	Example of request headers are content-type, language and connection style
+	Example of response headers are language, age, and server
+
+What are the processes that happen when you type “http://somesite.com/some/page.html” into a browser?
+	1: Local browser "resolves" the name into an IP address
+	2: Local browser makes an HTTP/HTTPS REQUEST to said IP address, providing headers where appropriate
+	3: Server replies with an HTTP/HTTPS RESPONSE, generally HTML and CSS, maybe some javascript
+	4: Browser converts the HTML from the response into to the page that is displayed for the user
+
+Part Two: Practice Tools
+Using curl, make a GET request to the icanhazdadjoke.com API to find all jokes involving the word “pirate”
+	curl -H "" "https://icanhazdadjoke.com/search?term=pirate"
+	Responses (Couldn't figure out how to get a single entry? I looked through their API page at icanhazdadjoke.com/api)
+	What did the pirate say on his 80th birthday? Aye Matey!
+	Why couldn't the kid see the pirate movie? Because it was rated arrr!
+	What does a pirate pay for his corn? A buccaneer!
+	Why are pirates called pirates? Because they arrr!
+	Why do pirates not know the alphabet? They always get stuck at "C"
+Use dig to find what the IP address is for icanhazdadjoke.com
+	dig https://icanhazdadjoke.com
+	172.20.16.1 port 53
+
+
+
+	
