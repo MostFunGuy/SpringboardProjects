@@ -41,7 +41,7 @@ async function searchShows(query) {
         id: loopshow.show.id,
         name: loopshow.show.name,
         summary: loopshow.show.summary,
-        image: loopshow.show.image ? loopshow.show.image.medium : `https://i.imgur.com/xDHFGVl.jpeg`  // Got an error for missing image, so added a safety feature
+        image: loopshow.show.image ? loopshow.show.image.medium : `http://tinyurl.com/missing-tv`  // Got an error for missing image, so added a safety feature
       }
       returnArray.push(newAddition);
     }
@@ -136,7 +136,11 @@ function populateShows(shows) {
            <div class="card-body">
              <h5 class="card-title">${show.name} (${show.id})</h5>
              <p class="card-text">${show.summary}</p>
+             <img class="card-img-top" src="${show.image}">
+             <button class="showEpisodeButton:${show.id}" onclick="populateEpisodes(${show.id})">Episodes</button>
+             <ul class="episodeList:${show.id}"></ul>
            </div>
+
          </div>
        </div>
       `);
@@ -207,3 +211,51 @@ async function getEpisodes(id) {
     console.log(`Invalid response from getEpisodes()`);
   }
 }
+
+
+async function populateEpisodes(showID){
+  const episodes = await getEpisodes(showID); // Wait for the response
+  // console.log(`Episodes:`)
+  //console.log(episodes);
+
+  const form = document.querySelector("form");
+
+  // Get the unordered list for these to go into:
+  //<div class="episodeList:${show.id}"></div>
+  const episodeUList = document.getElementsByClassName(`episodeList:${showID}`)[0]; // episodeList:1767
+  //console.log(`episodeListUnorderedList:`)
+  //console.log(episodeUList);
+
+  // Get the button, in order to hide it once clicked
+  document.getElementsByClassName(`showEpisodeButton:${showID}`)[0].disabled = true;
+  // I realize I should probably make this depend on getting a good result back with the request
+
+  /*
+  The episodes list is a simple <ul>, and the individual episodes 
+  can just be basic <li> elements, like <li>Pilot (season 1, number 1)</li>.
+  */
+  
+  for (episode of episodes){
+    let li = document.createElement("li"); // Make a list item
+    //Populate the list item with relevant data
+    li.appendChild(document.createTextNode(`${episode.name} (Season ${episode.season}, Episode ${episode.number})`));
+    episodeUList.appendChild(li); // Append the list item to the episode UL
+  }
+
+
+
+
+}
+
+// $("#shows-list").on("click", ".showEpisodeButton", async function handleEpisodeClick(evt) {
+//   let showId = $(evt.target).closest(".Show").data("show-id");
+//   let episodes = await getEpisodes(showId);
+//   populateEpisodes(episodes);
+// });
+
+
+
+
+
+
+//   const $showsList = $("#shows-list");   // Get the show div? I dunno
